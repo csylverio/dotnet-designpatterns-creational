@@ -44,7 +44,7 @@ public class SingletonController : ControllerBase
         });
     }
 
-        /// <summary>
+    /// <summary>
     /// Retorna o GUID do Singleton por meia de injeção de dependência
     /// </summary>
     [HttpGet("di")]

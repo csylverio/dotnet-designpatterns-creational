@@ -1,5 +1,9 @@
 using Microsoft.OpenApi.Models;
 using WebDesignPattern.Api.SingletonExample;
+using WebDesignPattern.Domain.CustomerRelationshipManagement;
+using WebDesignPattern.Domain.InventoryManagement;
+using WebDesignPattern.Domain.PurchaseTransaction;
+using WebDesignPattern.Infra.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +21,11 @@ builder.Services.AddSwaggerGen(c =>
 builder.Services.AddControllers();
 
 builder.Services.AddSingleton<INormalClass, NormalClass>();
+builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.AddScoped<IOrderBuilder, OrderBuilder>();
+builder.Services.AddScoped<IOrderRepository, OrderRepository>();
+builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
 var app = builder.Build();
 

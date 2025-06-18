@@ -11,4 +11,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="../WebDesignPattern.Domain/WebDesignPattern.Domain.csproj" />
+    <ProjectReference Include="../WebDesignPattern.Infra/WebDesignPattern.Infra.csproj" />
+  </ItemGroup>
+
 </Project>
