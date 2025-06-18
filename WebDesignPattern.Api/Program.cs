@@ -1,4 +1,6 @@
+using System.Reflection.Metadata;
 using Microsoft.OpenApi.Models;
+using WebDesignPattern.Api.FactoryExample;
 using WebDesignPattern.Api.SingletonExample;
 using WebDesignPattern.Domain.CustomerRelationshipManagement;
 using WebDesignPattern.Domain.InventoryManagement;
@@ -26,6 +28,7 @@ builder.Services.AddScoped<IOrderBuilder, OrderBuilder>();
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<IDocumentParserFactory, DocumentParserFactory>();
 
 var app = builder.Build();
 
